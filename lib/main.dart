@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: Register(),
     );
   }
 }
@@ -30,12 +30,12 @@ class HomePage extends StatelessWidget {
           Align(
             alignment: Alignment.topLeft,
             child: Image.asset(
-              "photos/logo.jpg",
+              "photos/rem.jpg",
             ),
           ),
           SizedBox(
-            height: 150,
-            width: 150,
+            height: 200,
+            width: 200,
             child: Image.asset("photos/talk.jpg"),
           ),
           TextButton(onPressed: (() {}), child: Text('TUSH TECH SOCIAL ')),
@@ -68,8 +68,103 @@ class Register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Sagar Cdy"),
+      backgroundColor: const Color(0xFFE0F5F0),
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Align(
+                alignment: Alignment.topLeft,
+                child: Image.asset(
+                  "photos/abc.jpg",
+                ),
+              ),
+              Align(
+                alignment: Alignment.topCenter,
+                child: const Text(
+                  " Welcome on trusttech Social",
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.black,
+                    fontFamily: 'serif',
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 40, right: 40, bottom: 2),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Enter your name',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 40, right: 40, bottom: 5),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Enter your E-mail',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 40, right: 40, bottom: 5),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Enter your phone Number ',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 40, right: 40, bottom: 5),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Enter your Password',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 40, right: 40, bottom: 5),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: "Confirm  Password",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: ElevatedButton(
+                    onPressed: () {},
+                    style: ButtonStyle(
+                        padding: MaterialStatePropertyAll(EdgeInsets.only(
+                      top: 10,
+                      bottom: 10,
+                      left: 70,
+                      right: 70,
+                    ))),
+                    child: const Text("Register")),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
