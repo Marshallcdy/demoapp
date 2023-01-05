@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
 
@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Register(),
+      home: Profile(),
     );
   }
 }
@@ -73,96 +73,230 @@ class Register extends StatelessWidget {
         scrollDirection: Axis.vertical,
         children: [
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            // ignore: duplicate_ignore
             children: [
               Align(
                 alignment: Alignment.topLeft,
                 child: Image.asset(
-                  "photos/abc.jpg",
+                  "photos/circle.jpg",
                 ),
               ),
-              Align(
-                alignment: Alignment.topCenter,
+              // ignore: prefer_const_constructors
+              Padding(
+                padding: const EdgeInsets.only(
+                  bottom: 40,
+                ),
                 child: const Text(
                   " Welcome on trusttech Social",
-                  textAlign: TextAlign.start,
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.black,
-                    fontFamily: 'serif',
+                    fontFamily: 'popbold.ttf',
                   ),
                 ),
               ),
+              // ignore: prefer_const_constructors
               Padding(
-                padding: const EdgeInsets.only(left: 40, right: 40, bottom: 2),
+                padding: const EdgeInsets.all(4.0),
+                child: TextField(
+                  // ignore: prefer_const_constructors
+                  decoration: InputDecoration(
+                    labelText: 'Enter your name',
+                    // ignore: prefer_const_constructors
+                    border: OutlineInputBorder(
+                      // ignore: prefer_const_constructors
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                  ),
+                ),
+              ),
+              // ignore: prefer_const_constructors
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: TextField(
+                  // ignore: prefer_const_constructors
+                  decoration: InputDecoration(
+                    labelText: 'Enter your name',
+                    // ignore: prefer_const_constructors
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                  ),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(4.0),
                 child: TextField(
                   decoration: InputDecoration(
                     labelText: 'Enter your name',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(40),
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 40, right: 40, bottom: 5),
+                padding: const EdgeInsets.all(4.0),
                 child: TextField(
                   decoration: InputDecoration(
-                    labelText: 'Enter your E-mail',
+                    labelText: 'Enter your name',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(40),
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 40, right: 40, bottom: 5),
+                padding: const EdgeInsets.all(4.0),
                 child: TextField(
                   decoration: InputDecoration(
-                    labelText: 'Enter your phone Number ',
+                    labelText: 'Enter your name',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(40),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 40, right: 40, bottom: 5),
-                child: TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Enter your Password',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 40, right: 40, bottom: 5),
-                child: TextField(
-                  decoration: InputDecoration(
-                    labelText: "Confirm  Password",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(2.0),
-                child: ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                        padding: MaterialStatePropertyAll(EdgeInsets.only(
-                      top: 10,
-                      bottom: 10,
-                      left: 70,
-                      right: 70,
-                    ))),
-                    child: const Text("Register")),
               ),
             ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: ElevatedButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                    padding: MaterialStatePropertyAll(EdgeInsets.only(
+                  top: 20,
+                  bottom: 20,
+                  left: 100,
+                  right: 100,
+                ))),
+                child: const Text("Register")),
+          ),
+          const Text(
+            "Already have an account ? Sign In",
+            style: TextStyle(
+              fontFamily: 'Popinis',
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class LogIn extends StatelessWidget {
+  const LogIn({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Color(0xFFE0F5F0),
+        //backgroundColor: Color(),
+        body: ListView(scrollDirection: Axis.vertical, children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Align(
+                  alignment: Alignment.topLeft,
+                  child: Image.asset("photos/circle.jpg")),
+              Text(
+                "Welcome Back!",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontFamily: 'serif',
+                ),
+              ),
+              SizedBox(
+                  height: 200,
+                  width: 200,
+                  child: Image.asset(
+                    "photos/login.jpg",
+                    height: 250,
+                    width: 200,
+                  )),
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: "Enter Your Email",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: "Enter Password",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                  ),
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  "Forget Password",
+                  style: TextStyle(
+                    color: Color(0xFF142B7C),
+                  ),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                  padding: MaterialStatePropertyAll(
+                    EdgeInsets.only(
+                      left: 100,
+                      top: 20,
+                      bottom: 20,
+                      right: 100,
+                    ),
+                  ),
+                ),
+                child: Text(
+                  "LOG IN ",
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  const Text("Haven't you Sign up?"),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("Sign up"),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ]));
+  }
+}
+
+class Profile extends StatelessWidget {
+  const Profile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          Image.asset(
+            "photos/top.jpg",
+            height: 220,
+            width: double.infinity,
+            fit: BoxFit.cover,
           ),
         ],
       ),
