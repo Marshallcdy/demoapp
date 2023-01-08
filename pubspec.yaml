@@ -64,9 +64,13 @@ flutter:
      - photos/login.jpg
      - photos/talk.jpg
      - photos/top.jpg
-    
+     - photos/man.jpg
      - photos/abc.jpg
      - photos/circle.jpg
+     - photos/Rectangle1.jpg
+     - photos/Rectangle2.jpg
+     - photos/Rectangle3.jpg
+     - photos/Rectangle4.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

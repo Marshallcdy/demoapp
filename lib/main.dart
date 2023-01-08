@@ -284,6 +284,13 @@ class LogIn extends StatelessWidget {
   }
 }
 
+List<String> check = [
+  "photos/Rectangle1.jpg",
+  "photos/Rectangle2.jpg",
+  "photos/Rectangle3.jpg",
+  "photos/Rectangle4.jpg",
+];
+
 class Profile extends StatelessWidget {
   const Profile({super.key});
 
@@ -298,6 +305,163 @@ class Profile extends StatelessWidget {
             width: double.infinity,
             fit: BoxFit.cover,
           ),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: SizedBox(
+              height: 70,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Icon(Icons.arrow_back),
+                  Icon(Icons.message),
+                ],
+              ),
+            ),
+          ),
+          Column(
+            children: [
+              Row(
+                children: [
+                  Column(
+                    children: const [
+                      SizedBox(
+                        child: SizedBox(
+                          height: 175,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Container(
+                height: 500,
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(50),
+                ),
+              )
+            ],
+          ),
+          Column(
+            children: [
+              SizedBox(height: 100),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 100),
+                    child: Container(
+                      clipBehavior: Clip.antiAlias,
+                      height: 150,
+                      width: 200,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(80),
+                        color: Colors.white,
+                      ),
+                      child: Image.asset(
+                        "photos/man.jpg",
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: Column(
+              children: const [
+                SizedBox(
+                  height: 200,
+                ),
+                Text("1K "),
+                Text("Follower"),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 310),
+            child: Column(
+              children: const [
+                SizedBox(
+                  height: 200,
+                ),
+                Text("200 "),
+                Text("Following"),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 100),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  height: 500,
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(Colors.black),
+                  ),
+                  child: Text(
+                    "Follow",
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(Colors.white),
+                  ),
+                  child: Text(
+                    "Message",
+                    style: TextStyle(color: Colors.black),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 70, top: 100),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                SizedBox(
+                  height: 700,
+                ),
+                Text("All"),
+                Text("Photos"),
+                Text("Videos"),
+              ],
+            ),
+          ),
+          Column(
+            children: [
+              SizedBox(
+                height: 440,
+              ),
+              Expanded(
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: Colors.white,
+                  ),
+                  child: GridView.builder(
+                    itemCount: 4,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 1,
+                      mainAxisSpacing: 1,
+                    ),
+                    itemBuilder: (context, index) {
+                      return Image.asset(check[index]);
+                    },
+                  ),
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );
