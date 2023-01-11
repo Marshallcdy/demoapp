@@ -1,5 +1,8 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, duplicate_ignore
 
+import 'package:demoapp/About.dart';
+import 'package:demoapp/Notification.dart';
+import 'package:demoapp/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Profile(),
+      home: BottonBar(),
     );
   }
 }
@@ -462,6 +465,58 @@ class Profile extends StatelessWidget {
               ),
             ],
           )
+        ],
+      ),
+    );
+  }
+}
+
+class BottonBar extends StatefulWidget {
+  const BottonBar({super.key});
+
+  @override
+  State<BottonBar> createState() => _BottonBarState();
+}
+
+class _BottonBarState extends State<BottonBar> {
+  int selectedItem = 0;
+  List<Widget> pagedec = [
+    Home(),
+    Notifi(),
+    AboutPage(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: false,
+        actions: const [
+          Icon(
+            Icons.menu,
+            color: Colors.black,
+          ),
+        ],
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: Text(
+          "Work feed",
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+      ),
+      body: pagedec[selectedItem],
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: (value) {
+          selectedItem = value;
+          setState(() {});
+        },
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.notifications), label: "Notification"),
+          BottomNavigationBarItem(icon: Icon(Icons.info), label: "About"),
         ],
       ),
     );
