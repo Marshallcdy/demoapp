@@ -6,33 +6,25 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          ListView.builder(
-              itemCount: 1,
-              itemBuilder: ((context, index) {
-                return Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(2.0),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 200,
-                            width: double.infinity,
-                            color: Colors.blue,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [Text("Sagar"), Text("March 10")],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                );
-              })),
-        ],
+      body: ListView.builder(
+        itemCount: 2,
+        itemBuilder: ((context, index) {
+          return Padding(
+            padding: const EdgeInsets.all(10),
+            child: Container(
+              height: 200,
+              width: double.infinity,
+              color: Colors.blue,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("sagar"),
+                  Text("March 10"),
+                ],
+              ),
+            ),
+          );
+        }),
       ),
     );
   }

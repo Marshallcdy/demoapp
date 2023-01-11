@@ -1,8 +1,8 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, duplicate_ignore
 
 import 'package:demoapp/About.dart';
-import 'package:demoapp/Notification.dart';
 import 'package:demoapp/home.dart';
+import 'package:demoapp/notification.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -482,6 +482,7 @@ class _BottonBarState extends State<BottonBar> {
   int selectedItem = 0;
   List<Widget> pagedec = [
     Home(),
+    // Notifi(),
     Notifi(),
     AboutPage(),
   ];
@@ -508,15 +509,24 @@ class _BottonBarState extends State<BottonBar> {
       ),
       body: pagedec[selectedItem],
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: selectedItem,
         onTap: (value) {
           selectedItem = value;
           setState(() {});
         },
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.notifications), label: "Notification"),
-          BottomNavigationBarItem(icon: Icon(Icons.info), label: "About"),
+            icon: Icon(Icons.home),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications),
+            label: "Notification",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info),
+            label: "About",
+          ),
         ],
       ),
     );
